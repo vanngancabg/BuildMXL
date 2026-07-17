@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Median XL Build Snapshot Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="hero">
+        <div class="badge">📸 Median XL - Build Snapshot Database</div>
+        <h1>Thư Viện <span class="highlight-text">Build Snapshot</span></h1>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar bên trái: Hướng dẫn lấy Snapshot -->
+        <div class="sidebar-area">
+            <section class="card guide-card">
+                <h2>📖 Hướng dẫn lưu Snapshot</h2>
+                <ul class="steps-list">
+                    <li><span class="step-num">1</span> Truy cập nhân vật của bạn tại đường dẫn <a href="https://median-xl.com" target="_blank" class="step-link">median-xl.com/char/ten</a> hoặc <a href="https://tsw.vn.cz" target="_blank" class="step-link">tsw.vn.cz/char/ten</a> (Chỉ chủ tài khoản mới làm được).</li>
+                    <li><span class="step-num">2</span> Kéo xuống dưới, tìm và nhấn vào nút <span class="highlight-vnn">"Add snapshot"</span> ở phía bên phải màn hình.</li>
+                    <li><span class="step-num">3</span> Hệ thống sẽ tạo một đường link Snapshot có dạng: <span class="highlight-vnn">https://tsw.vn.cz/char/tennhanvat/ma_so</span> . Hãy copy đường link này.</li>
+                    <li><span class="step-num">4</span> Bạn có thể xem lại các Snapshot đã lưu của mình bằng cách vào mục <span class="highlight-vnn">NotArmory ➔ Snapshot</span> trên trang chủ.</li>
+                    <li><span class="step-num">5</span> Lưu ý: Snapshot đã lưu sẽ <strong>không bị mất đi</strong> ngay cả khi bạn xóa nhân vật game.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Bảng hiển thị bên phải: Có thanh lọc trên đầu mỗi cột -->
+        <main class="content-area card list-card">
+            <div class="list-header">
+                <h2>👥 Danh Sách Snapshot Hiện Có</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <!-- Hàng 1: Tiêu đề các cột -->
+                        <tr>
+                            <th style="width: 70px;">STT</th>
+                            <th>Class</th>
+                            <th>Tên Build</th>
+                            <th>Loại Skill</th>
+                            <th>Đường dẫn Snapshot</th>
+                        </tr>
+                        <!-- Hàng 2: Các ô nhập để lọc trực tiếp trên đầu mỗi cột -->
+                        <tr class="filter-row">
+                            <th></th> <!-- Cột STT không cần lọc -->
+                            <th>
+                                <select id="filterClass" class="filter-input">
+                                    <option value="">Tất cả</option>
+                                    <option value="BARBARIAN">BARBARIAN</option>
+                                    <option value="ASSASSIN">ASSASSIN</option>
+                                    <option value="AMAZON">AMAZON</option>
+                                    <option value="PALADIN">PALADIN</option>
+                                    <option value="DRUID">DRUID</option>
+                                    <option value="NECROMANCER">NECROMANCER</option>
+                                    <option value="SORCERESS">SORCERESS</option>
+                                </select>
+                            </th>
+                            <th>
+                                <input type="text" id="filterBuildName" class="filter-input" placeholder="Lọc tên build...">
+                            </th>
+                            <th>
+                                <select id="filterSkillType" class="filter-input">
+                                    <option value="">Tất cả</option>
+                                    <option value="Mặc định">Mặc định</option>
+                                    <option value="Oskill">Oskill</option>
+                                </select>
+                            </th>
+                            <th>
+                                <input type="text" id="filterLink" class="filter-input" placeholder="Lọc link...">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="snapshotTableBody">
+                        <tr><td colspan="5" style="text-align:center; color: #64748b;">Đang đồng bộ dữ liệu từ Google Sheets...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
