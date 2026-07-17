@@ -1,5 +1,5 @@
 // Thay đổi link Web App Google Sheets của bạn vào đây (giữ nguyên dấu ngoặc kép)
-const SCRIPT_URL = "ĐƯỜNG_LINK_WEB_APP_CỦA_BẠN";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyaS9A5W0J-VSnRN7IU7NY6pFy2r02gZUimOiMYJfR8HRmhxFNYK7sdZD6jU0hDLt8/exec";
 
 let allSnapshots = [];
 let filteredSnapshots = [];
