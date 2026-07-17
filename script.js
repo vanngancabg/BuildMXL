@@ -1,5 +1,5 @@
 // Thay đổi link Web App Google Sheets của bạn vào đây (giữ nguyên dấu ngoặc kép)
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyaS9A5W0J-VSnRN7IU7NY6pFy2r02gZUimOiMYJfR8HRmhxFNYK7sdZD6jU0hDLt8/exec";
+const SCRIPT_URL = "ĐƯỜNG_LINK_WEB_APP_CỦA_BẠN";
 
 let allSnapshots = [];
 let filteredSnapshots = [];
@@ -12,7 +12,6 @@ const submitBtn = document.getElementById('submitBtn');
 const filterClass = document.getElementById('filterClass');
 const filterBuildName = document.getElementById('filterBuildName');
 const filterSkillType = document.getElementById('filterSkillType');
-const filterLink = document.getElementById('filterLink');
 
 // 1. Tải dữ liệu từ Google Sheets
 function loadSnapshots() {
@@ -57,20 +56,18 @@ function renderTable() {
     });
 }
 
-// 3. Hàm xử lý lọc đa cột thời gian thực
+// 3. Hàm xử lý lọc đa cột thời gian thực (Đã bỏ lọc Link)
 function applyFilters() {
     const valClass = filterClass.value.toUpperCase();
     const valBuildName = filterBuildName.value.toLowerCase().trim();
     const valSkillType = filterSkillType.value;
-    const valLink = filterLink.value.toLowerCase().trim();
     
     filteredSnapshots = allSnapshots.filter(item => {
         const matchClass = (valClass === "" || item.characterClass === valClass);
         const matchBuildName = (valBuildName === "" || item.buildName.toLowerCase().includes(valBuildName));
         const matchSkillType = (valSkillType === "" || item.skillType === valSkillType);
-        const matchLink = (valLink === "" || item.link.toLowerCase().includes(valLink));
         
-        return matchClass && matchBuildName && matchSkillType && matchLink;
+        return matchClass && matchBuildName && matchSkillType;
     });
     
     renderTable();
@@ -80,7 +77,6 @@ function applyFilters() {
 filterClass.addEventListener('change', applyFilters);
 filterBuildName.addEventListener('input', applyFilters);
 filterSkillType.addEventListener('change', applyFilters);
-filterLink.addEventListener('input', applyFilters);
 
 // 4. Xử lý gửi Form Đăng ký Snapshot mới
 form.addEventListener('submit', function(event) {
