@@ -68,7 +68,7 @@ h1 { font-size: 38px; font-weight: 800; margin: 0; }
 .step-link:hover { text-decoration: underline; color: #7dd3fc; }
 .highlight-vnn { color: var(--accent-gold); font-weight: 600; }
 
-/* CSS Form Đăng ký */
+/* CSS Form Đăng ký (Đã sửa lỗi hiển thị vỡ khung) */
 .input-group { margin-bottom: 18px; width: 100%; display: block; }
 .input-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-align: left; }
 
